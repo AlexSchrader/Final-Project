@@ -33,17 +33,21 @@
           <button id="random-plan" class="random-plan" style="margin-left: 20px; margin-bottom: 10px">Generate Random Meals</button>
           <h2>Meal Plan</h2>
           <table id="meal-plan-table">
-            <tr>
-                <th><span class="day-of-week">Day</span></th>
-                <th>Breakfast</th>
-                <th>Snack</th>
-                <th>Lunch</th>
-                <th>Snack</th>
-                <th>Dinner</th>
-            </tr>
-            <tr>
-                <td><span class="day-of-week">Monday:</span></td>
-                <td>
+            <thead>
+                <tr>
+                    <th><span class="day-of-week">Day</span></th>
+                    <th>Breakfast</th>
+                    <th>Snack</th>
+                    <th>Lunch</th>
+                    <th>Snack</th>
+                    <th>Dinner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Monday -->
+                <tr id="monday-row" class="day-row">
+                  <td><span class="day-of-week">Monday:</span></td>
+                  <td class="day-cell">
                     <select id="monday-breakfast" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -59,7 +63,7 @@
                       </select>
                       <input type="text" id="monday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="monday-snack" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Apple Slices">Apple Slices</option>
@@ -75,7 +79,7 @@
                       </select>
                       <input type="text" id="monday-snack-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="monday-lunch" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -91,7 +95,7 @@
                       </select>
                       <input type="text" id="monday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="monday-snack2" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -107,7 +111,7 @@
                       </select>
                       <input type="text" id="monday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="monday-dinner" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -123,10 +127,11 @@
                       </select>
                       <input type="text" id="monday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-            </tr>
-            <tr>
-                <td><span class="day-of-week">Tuesday:</span></td>
-                <td>
+              </tr>
+                <!-- Tuesday -->
+                <tr id="tuesday-row" class="day-row">
+                  <td><span class="day-of-week">Tuesday:</span></td>
+                  <td class="day-cell">
                     <select id="tuesday-breakfast" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -142,7 +147,7 @@
                       </select>
                       <input type="text" id="tuesday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="tuesday-snack" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Apple Slices">Apple Slices</option>
@@ -158,7 +163,7 @@
                       </select>
                       <input type="text" id="tuesday-snack-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="tuesday-lunch" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -174,7 +179,7 @@
                       </select>
                       <input type="text" id="tuesday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
                     </td>
-                <td>
+                <td class="day-cell">
                     <select id="tuesday-snack2" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -190,7 +195,7 @@
                       </select>
                     <input type="text" id="tuesday-snack2-custom"  class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell"> 
                     <select id="tuesday-dinner" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -207,8 +212,10 @@
                     <input type="text" id="tuesday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
             </tr>
-                <td><span class="day-of-week">wednesday:</span></td>
-                <td>
+                <!-- Wednesday -->
+                <tr id="Wednesday-row" class="day-row">
+                  <td><span class="day-of-week">Wednesday:</span></td>
+                  <td class="day-cell">
                     <select id="wednesday-breakfast" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -224,7 +231,7 @@
                       </select>
                     <input type="text" id="wednesday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="wednesday-snack" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Apple Slices">Apple Slices</option>
@@ -240,7 +247,7 @@
                       </select>
                     <input type="text" id="wednesday-snack-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="wednesday-lunch" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -256,7 +263,7 @@
                       </select>
                     <input type="text" id="wednesday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="wednesday-snack2" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -272,7 +279,7 @@
                       </select>
                     <input type="text" id="wednesday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="wednesday-dinner" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -289,9 +296,10 @@
                     <input type="text" id="wednesday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
             </tr>
-            <tr>
-                <td><span class="day-of-week">Thursday:</span></td>
-                <td>
+                <!-- Thursday -->
+                <tr id="thursday-row" class="day-row">
+                  <td><span class="day-of-week">Thursday:</span></td>
+                  <td class="day-cell">
                     <select id="thursday-breakfast" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -307,7 +315,7 @@
                       </select>
                     <input type="text" id="thursday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="thursday-snack" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Apple Slices">Apple Slices</option>
@@ -323,7 +331,7 @@
                       </select>
                     <input type="text" id="thursday-snack-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="thursday-lunch" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -339,7 +347,7 @@
                       </select>
                     <input type="text" id="thursday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="thursday-snack2" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -355,7 +363,7 @@
                       </select>
                     <input type="text" id="thursday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="thursday-dinner" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -373,8 +381,10 @@
                 </td>
             </tr>
             <tr>
-                <td><span class="day-of-week">Friday:</span></td>
-                <td>
+                <!-- Friday -->
+                <tr id="friday-row" class="day-row">
+                  <td><span class="day-of-week">Friday:</span></td>
+                  <td class="day-cell">
                     <select id="friday-breakfast" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -390,7 +400,7 @@
                       </select>
                     <input type="text" id="friday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="friday-snack" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Apple Slices">Apple Slices</option>
@@ -406,7 +416,7 @@
                       </select>
                     <input type="text" id="friday-snack-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="friday-lunch" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -422,7 +432,7 @@
                       </select>
                     <input type="text" id="friday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="friday-snack2" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -438,7 +448,7 @@
                       </select>
                     <input type="text" id="friday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
                 </td>
-                <td>
+                <td class="day-cell">
                     <select id="friday-dinner" class="dropdown-box">
                         <option value="">Select a meal</option>
                         <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -456,8 +466,10 @@
                 </td>
             </tr>
             <tr>
-              <td><span class="day-of-week">Saturday:</span></td>
-              <td>
+              <!-- Saturday -->
+              <tr id="saturday-row" class="day-row">
+                <td><span class="day-of-week">Saturday:</span></td>
+                <td class="day-cell">
                   <select id="saturday-breakfast" class="dropdown-box">
                       <option value="">Select a meal</option>
                       <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -473,7 +485,7 @@
                     </select>
                   <input type="text" id="saturday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
               </td>
-              <td>
+              <td class="day-cell">
                   <select id="saturday-snack" class="dropdown-box">
                       <option value="">Select a meal</option>
                       <option value="Apple Slices">Apple Slices</option>
@@ -489,7 +501,7 @@
                     </select>
                   <input type="text" id="saturday-snack-custom" class="custom-input" placeholder="Enter custom meal">
               </td>
-              <td>
+              <td class="day-cell">
                   <select id="saturday-lunch" class="dropdown-box">
                       <option value="">Select a meal</option>
                       <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -505,7 +517,7 @@
                     </select>
                   <input type="text" id="saturday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
               </td>
-              <td>
+              <td class="day-cell">
                   <select id="saturday-snack2" class="dropdown-box">
                       <option value="">Select a meal</option>
                       <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -521,7 +533,7 @@
                     </select>
                   <input type="text" id="saturday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
               </td>
-              <td>
+              <td class="day-cell">
                   <select id="saturday-dinner" class="dropdown-box">
                       <option value="">Select a meal</option>
                       <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -539,8 +551,10 @@
               </td>
           </tr>
           <tr>
-            <td><span class="day-of-week">Sunday:</span></td>
-            <td>
+            <!-- Sunday -->
+            <tr id="sunday-row" class="day-row">
+              <td><span class="day-of-week">Sunday:</span></td>
+              <td class="day-cell">
                 <select id="sunday-breakfast" class="dropdown-box">
                     <option value="">Select a meal</option>
                     <option value="Eggs and Bacon">Eggs and Bacon</option>
@@ -556,7 +570,7 @@
                   </select>
                 <input type="text" id="sunday-breakfast-custom" class="custom-input" placeholder="Enter custom meal">
             </td>
-            <td>
+            <td class="day-cell">
                 <select id="sunday-snack" class="dropdown-box">
                     <option value="">Select a meal</option>
                     <option value="Apple Slices">Apple Slices</option>
@@ -572,7 +586,7 @@
                   </select>
                 <input type="text" id="sunday-snack-custom" class="custom-input" placeholder="Enter custom meal">
             </td>
-            <td>
+            <td class="day-cell">
                 <select id="sunday-lunch" class="dropdown-box">
                     <option value="">Select a meal</option>
                     <option value="Grilled Chicken Sandwich">Grilled Chicken Sandwich</option>
@@ -588,7 +602,7 @@
                   </select>
                 <input type="text" id="sunday-lunch-custom" class="custom-input" placeholder="Enter custom meal">
             </td>
-            <td>
+            <td class="day-cell">
                 <select id="sunday-snack2" class="dropdown-box">
                     <option value="">Select a meal</option>
                     <option value="Rice Cakes with Peanut Butter">Rice Cakes with Peanut Butter</option>
@@ -604,7 +618,7 @@
                   </select>
                 <input type="text" id="sunday-snack2-custom" class="custom-input" placeholder="Enter custom meal">
             </td>
-            <td>
+            <td class="day-cell">
                 <select id="sunday-dinner" class="dropdown-box">
                     <option value="">Select a meal</option>
                     <option value="Grilled Chicken Breast">Grilled Chicken Breast</option>
@@ -621,7 +635,7 @@
                 <input type="text" id="sunday-dinner-custom" class="custom-input" placeholder="Enter custom meal">
             </td>
         </tr>
-        </table>
+      </table>
       </div>
       <div class="buttons-cointainer">
         <button id="generate-plan" class="generate-plan">Generate Meal Plan</button>
