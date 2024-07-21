@@ -85,16 +85,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
    // Generate meal plan
-   function generateMealPlan() {
+   function generateMealPlan(event) {
+    event.preventDefault();
+  
     if (!isValidEmail(emailInput.value)) {
       alert('Please enter a valid email address.');
       return;
     }
-
+  
     const name = nameInput.value;
     const email = emailInput.value;
     const goal = goalInput.value;
-
+  
     let mealPlanHTML = `
       <!DOCTYPE html>
       <html lang="en">
@@ -157,53 +159,84 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const mealSelects = document.querySelectorAll('select.dropdown-box');
-
+    const customTextInputs = document.querySelectorAll('.custom-input');
+  
+    let isValid = true;
+  
     days.forEach(function(day, index) {
       let breakfastValue = mealSelects[index * 5].value;
       let snackValue = mealSelects[index * 5 + 1].value;
       let lunchValue = mealSelects[index * 5 + 2].value;
       let snack2Value = mealSelects[index * 5 + 3].value;
       let dinnerValue = mealSelects[index * 5 + 4].value;
-
-      if (mealSelects[index * 5].options[mealSelects[index * 5].selectedIndex].text === 'Other') {
-        breakfastValue = customTextInput[index * 5].value;
+  
+      if (mealSelects[index * 5].options[mealSelects[index * 5].selectedIndex].text === 'Other' && customTextInputs[index * 5].value === '') {
+        customTextInputs[index * 5].style.border = '1px solid red';
+        alert('Please fill out the custom meal input field for breakfast.');
+        isValid = false;
+      } else {
+        customTextInputs[index * 5].style.border = '';
       }
-      if (mealSelects[index * 5 + 1].options[mealSelects[index * 5 + 1].selectedIndex].text === 'Other') {
-        snackValue = customTextInput[index * 5 + 1].value;
+  
+      if (mealSelects[index * 5 + 1].options[mealSelects[index * 5 + 1].selectedIndex].text === 'Other' && customTextInputs[index * 5 + 1].value === '') {
+        customTextInputs[index * 5 + 1].style.border = '1px solid red';
+        alert('Please fill out the custom meal input field for snack.');
+        isValid = false;
+      } else {
+        customTextInputs[index * 5 + 1].style.border = '';
       }
-      if (mealSelects[index * 5 + 2].options[mealSelects[index * 5 + 2].selectedIndex].text === 'Other') {
-        lunchValue = customTextInput[index * 5 + 2].value;
+  
+      if (mealSelects[index * 5 + 2].options[mealSelects[index * 5 + 2].selectedIndex].text === 'Other' && customTextInputs[index * 5 + 2].value === '') {
+        customTextInputs[index * 5 + 2].style.border = '1px solid red';
+        alert('Please fill out the custom meal input field for lunch.');
+        isValid = false;
+      } else {
+        customTextInputs[index * 5 + 2].style.border = '';
       }
-      if (mealSelects[index * 5 + 3].options[mealSelects[index * 5 + 3].selectedIndex].text === 'Other') {
-        snack2Value = customTextInput[index * 5 + 3].value;
+  
+      if (mealSelects[index * 5 + 3].options[mealSelects[index * 5 + 3].selectedIndex].text === 'Other' && customTextInputs[index * 5 + 3].value === '') {
+        customTextInputs[index * 5 + 3].style.border = '1px solid red';
+        alert('Please fill out the custom meal input field for snack 2.');
+        isValid = false;
+      } else {
+        customTextInputs[index * 5 + 3].style.border = '';
       }
-      if (mealSelects[index * 5 + 4].options[mealSelects[index * 5 + 4].selectedIndex].text === 'Other') {
-        dinnerValue = customTextInput[index * 5 + 4].value;
+  
+      if (mealSelects[index * 5 + 4].options[mealSelects[index * 5 + 4].selectedIndex].text === 'Other' && customTextInputs[index * 5 + 4].value === '') {
+        customTextInputs[index * 5 + 4].style.border = '1px solid red';
+        alert('Please fill out the custom meal input field for dinner.');
+        isValid = false;
+      } else {
+        customTextInputs[index * 5 + 4].style.border = '';
       }
-
-      mealPlanHTML += `
-        <tr>
-            <td>${day}</td>
-            <td>${breakfastValue}</td>
-            <td>${snackValue}</td>
-            <td>${lunchValue}</td>
-            <td>${snack2Value}</td>
-            <td>${dinnerValue}</td>
-        </tr>
-      `;
+  
+      if (isValid) {
+        mealPlanHTML += `
+          <tr>
+              <td>${day}</td>
+              <td>${breakfastValue === 'Other' ? customTextInputs[index * 5].value : breakfastValue}</td>
+              <td>${snackValue === 'Other' ? customTextInputs[index * 5 + 1].value : snackValue}</td>
+              <td>${lunchValue === 'Other' ? customTextInputs[index * 5 + 2].value : lunchValue}</td>
+              <td>${snack2Value === 'Other' ? customTextInputs[index * 5 + 3].value : snack2Value}</td>
+              <td>${dinnerValue === 'Other' ? customTextInputs[index * 5 + 4].value : dinnerValue}</td>
+          </tr>
+        `;
+      }
     });
-
-    mealPlanHTML += `
-    </table>
-    <button onclick="window.print();">Print/Download</button>
-</body>
-</html>
-`;
-
-    const newWindow = window.open('', '_blank');
-    newWindow.document.open();
-    newWindow.document.write(mealPlanHTML);
-    newWindow.document.close();
+  
+    if (isValid) {
+      mealPlanHTML += `
+        </table>
+        <button onclick="window.print();">Print/Download</button>
+      </body>
+      </html>
+      `;
+  
+      const newWindow = window.open('', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(mealPlanHTML);
+      newWindow.document.close();
+    }
   }
 
   // Clear meal plan
