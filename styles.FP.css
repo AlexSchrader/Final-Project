@@ -95,6 +95,12 @@ h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 }
 
+.day-cell {
+  border-top: 2px solid #383838;
+  padding-top: 10px;
+}
+
+
 /* Form Styles */
 
 label {
@@ -102,17 +108,19 @@ label {
   margin-bottom: 10px;
   font-weight: bold;
   color: #333;
+  margin-left: 5%;
   animation: bounce 2s; 
 }
 
 input[type="text"], input[type="email"] {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
   transition: border-color 0.2s; 
+  margin-left: 5%;
 }
 
 input[type="text"]:focus, input[type="email"]:focus {
@@ -403,7 +411,7 @@ li input[type="text"] {
 
 /* Style the dropdown boxes */
 .dropdown-box {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -411,6 +419,7 @@ li input[type="text"] {
   box-sizing: border-box;
   margin-top: 10px;
   animation: fadeIn 2s; 
+  margin-left: 5%;
 }
 
 /* Style the dropdown box options */
@@ -426,6 +435,7 @@ li input[type="text"] {
   text-decoration: underline;
   color: #4CAF50;
   animation: bounce 2s; 
+  text-align: right;
 }
 
 /* Animations */
